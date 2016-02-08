@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Custom report.-->
+<openerp>
+<data>
+<template id="project.complaints_register">
+<t t-foreach="docs" t-as="o">
+<div class="page">   
+	<div class="row mt0" style="border-bottom: 1px solid #000000;color:#000000;">
+		<div class="col-xs-3" style="text-align:center;">
+		         <img src='/document/static/img/deltalogo.png' align="center"/>			
+        </div>
+		<div class="col-xs-6" style="text-align:center;">
+        <h3>COMPLAINT REGISTER</h3><br/>
+        </div>
+    </div>	
+	<div class="row mt4" style="margin-top:10px; margin-bottom:1em">
+	    <div class="col-xs-1"> PROJECT </div>
+		<div class="col-xs-11"> <span t-field="o.name"/> </div>
+	</div>
+    <div class="row" style="background-color:#568eff;border: 1px solid #568eff;color:#ffffff;" >
+        <div class="col-xs-2" style="border:1px solid #568eff;text-align:center;">COMPLAINT 
+			<div class="row">
+                <div class="col-xs-6" style="border:1px solid #568eff;text-align:center;">NUMBER</div>
+                <div class="col-xs-6" style="border:1px solid #568eff;text-align:center;">TYPE</div>
+            </div>
+        </div>
+        <div class="col-xs-3" style="border-right:1px solid #000000;text-align:center;">BRIEF DESCRIPTION </div>
+        <div class="col-xs-3" style="border-right:1px solid #000000;text-align:center;">ACTION REQUIRED </div>
+        <div class="col-xs-2" style="border:1px solid #0;text-align:center;">ACTION BY 
+			<div class="row">
+                <div class="col-xs-6" style="border-right:1px solid #000000;text-align:center;">NAME</div>
+                <div class="col-xs-6" style="border-right:1px solid #000000;text-align:center;">TARGET DATE</div>
+            </div>
+        </div>
+        <div class="col-xs-2" style="border-right:1px solid #000000;text-align:center;">FOLLOW UP AND CLOSE OUT </div>
+    </div>
+	<t t-foreach="o.issue_ids" t-as="p">
+		<div class="row mt1" style="border-bottom:1px solid #568eff;text-align:center;">  
+			<div class="col-xs-1" style="border-right:1px solid #568eff;text-align:center; font-size:12px">  <span t-field="p.complaintno"/>  </div> 
+			<div class="col-xs-1" style="border-right:1px solid #568eff;text-align:center; font-size:12px">  <span t-field="p.x_tags"/> </div>
+			<div class="col-xs-3" style="border-right:1px solid #568eff;text-align:center; font-size:12px">  <span t-field="p.description"/></div>
+            <div class="col-xs-3" style="border-right:1px solid #568eff;text-align:center; font-size:12px">  <span t-field="p.x_actionreq"/></div>
+            <div class="col-xs-1" style="border-right:1px solid #568eff;text-align:center; font-size:12px">  <span t-field="p.user_id"/></div>
+            <div class="col-xs-1" style="border-right:1px solid #568eff;text-align:center; font-size:12px">  <span t-field="p.date_deadline"/></div>
+            <div class="col-xs-1" style="border-right:1px solid #568eff;text-align:center; font-size:12px">  <span t-field="p.x_followup"/></div>
+		</div>
+	</t>
+</div>
+</t>
+</template>
+</data>
+</openerp>
+ 
